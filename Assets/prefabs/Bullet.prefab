@@ -13,10 +13,11 @@ GameObject:
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
-  - 54: {fileID: 5400000}
   - 114: {fileID: 11400004}
+  - 54: {fileID: 5400000}
   - 82: {fileID: 8200000}
-  m_Layer: 0
+  - 114: {fileID: 11400006}
+  m_Layer: 11
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,8 +167,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b9896e46f7642478973b6dfaee1b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsCanBeDestroyed:
-  - {fileID: 100000, guid: eae04ef127aff4dbc857bb1c5a8513ad, type: 2}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b9896e46f7642478973b6dfaee1b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

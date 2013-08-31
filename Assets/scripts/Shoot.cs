@@ -21,8 +21,12 @@ public class Shoot : MonoBehaviour {
 			}
 		}
 		else if (Input.GetKeyDown (KeyCode.Z)) {
-			Instantiate (bullet, transform.position, transform.rotation);
+			shoot ();
 		}
+	} // End of Method
+
+	public void shoot () {
+		Instantiate (bullet, transform.position, transform.rotation);
 	} // End of Method
 
 } // End of Class

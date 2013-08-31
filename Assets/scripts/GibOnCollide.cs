@@ -20,7 +20,7 @@ public class GibOnCollide : MonoBehaviour {
 				gibInstance.rigidbody.AddExplosionForce (explosionForce, transform.position, spawnRadius);
 			}
 			foreach (GameObject gib in staticGibs) {
-				GameObject gibInstance = Instantiate (gib, transform.position, transform.rotation) as GameObject;
+				/*GameObject gibInstance =*/ Instantiate (gib, transform.position, transform.rotation) /*as GameObject*/;
 			}
 			Destroy (gameObject);
 		}

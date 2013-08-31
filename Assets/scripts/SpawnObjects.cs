@@ -5,7 +5,9 @@ public class SpawnObjects : MonoBehaviour {
 
 	public GameObject spawnObject;
 
-	public Vector2 spawnArea; /* x = Width; y = Height */
+	public int spawnAreaWidth;
+
+	public int spawnAreaHeight;
 
 	public Vector2 numberOfEnemies;
 
@@ -14,8 +16,8 @@ public class SpawnObjects : MonoBehaviour {
 		for (int x = 0; x < numberOfEnemies.x; x++) {
 			for (int y = 0; y < numberOfEnemies.y; y++) {
 				Vector3 spawnPosition = transform.position;
-				spawnPosition.x += x * spawnArea.x / numberOfEnemies.x;
-				spawnPosition.y += y * spawnArea.y / numberOfEnemies.y;
+				spawnPosition.x += x * spawnAreaWidth / numberOfEnemies.x;
+				spawnPosition.y += y * spawnAreaHeight / numberOfEnemies.y;
 				GameObject newObject = Instantiate (spawnObject, spawnPosition, transform.rotation) as GameObject;
 				newObject.transform.parent = gameObject.transform; // Add the created Game Object inside to my parent (Enemy Manager Game Object)
 			} // End of For
@@ -27,20 +29,6 @@ public class SpawnObjects : MonoBehaviour {
 			GameManager.speed += GameManager.increaseSpeedPerLevel;
 			Start ();
 		} // End of If
-	} // End of Method
-
-	//
-	void OnDrawGizmos () {
-		for (int x = 0; x < numberOfEnemies.x; x++) {
-			for (int y = 0; y < numberOfEnemies.y; y++) {
-				Vector3 spawnPosition = transform.position;
-				spawnPosition.x += x * spawnArea.x / numberOfEnemies.x;
-				spawnPosition.y += y * spawnArea.y / numberOfEnemies.y;
-				Gizmos.DrawLine (spawnPosition - Vector3.left, spawnPosition + Vector3.right);
-				Gizmos.DrawLine (spawnPosition - Vector3.up, spawnPosition + Vector3.down);
-				Gizmos.DrawLine (spawnPosition - Vector3.back, spawnPosition + Vector3.forward);
-			} // End of For
-		} // End of For
 	} // End of Method
 
 } // End of Class

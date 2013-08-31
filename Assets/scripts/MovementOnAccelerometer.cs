@@ -7,23 +7,9 @@ public class MovementOnAccelerometer : MonoBehaviour {
 
 	public float translateMultiply = 5.0f;
 
-	int dir = 1;
-
-	//
-	void Start () {
-		// TODO Change it to a iOS/Android GameManager
-		Screen.orientation = ScreenOrientation.Landscape;
-		Screen.sleepTimeout = SleepTimeout.NeverSleep;
-	} // End of Method
-
 	//
 	void Update () {
 		if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer) {
-
-			// If Escape Key was pressed, then Quit!
-			if (Input.GetKey (KeyCode.Escape)) {
-				Application.Quit ();
-			} // End of If
 
 			dirAccel.z = Input.acceleration.x;
 
